@@ -1,0 +1,179 @@
+<div class="sort-container">
+  <div class="gender-container">
+    <div
+      class="btn-container"
+      [ngClass]="{ 'blue-btn': !isClickedWomen, 'red-btn': isClickedWomen }"
+      (click)="toggleCategory('Womens')"
+    >
+      <p>Women</p>
+    </div>
+
+    <div
+      class="btn-container"
+      [ngClass]="{ 'blue-btn': !isClickedMen, 'red-btn': isClickedMen }"
+      (click)="toggleCategory('Mens')"
+    >
+      <p>Men</p>
+    </div>
+
+    <div
+      class="btn-container"
+      [ngClass]="{ 'blue-btn': !isClickedUnisex, 'red-btn': isClickedUnisex }"
+      (click)="toggleCategory('Unisex')"
+    >
+      <p>Unisex</p>
+    </div>
+  </div>
+
+  <div class="gender-container">
+    <div class="btn-container">
+      <select name="style" id="style" (change)="onStyleChange($event)">
+        <option value="Style" selected>Style</option>
+        <option value="Show">Show</option>
+        <!-- Add more options if needed -->
+      </select>
+    </div>
+
+    <div class="checkbox-container" *ngIf="isCheckboxVisible">
+      <div class="checkbox-column">
+        <label> <input type="checkbox" /> All </label>
+        <label> <input type="checkbox" /> Diamond </label>
+        <label> <input type="checkbox" /> Eternity </label>
+        <label> <input type="checkbox" /> Classic </label>
+        <label> <input type="checkbox" /> Plain Metal </label>
+        <label> <input type="checkbox" /> Anniversary </label>
+        <label> <input type="checkbox" /> Stackable </label>
+        <label> <input type="checkbox" /> Pave </label
+        ><label> <input type="checkbox" /> Sinmple </label>
+        <label> <input type="checkbox" /> Channel Set </label>
+      </div>
+      <div class="checkbox-column">
+        <label> <input type="checkbox" /> Curved </label>
+        <label> <input type="checkbox" /> Fashion </label>
+        <label> <input type="checkbox" /> Vintage </label>
+        <label> <input type="checkbox" /> Designer </label>
+        <label> <input type="checkbox" /> Milgrain </label>
+        <label> <input type="checkbox" /> Band </label>
+        <label> <input type="checkbox" /> Unique </label>
+        <label> <input type="checkbox" /> Religious </label>
+        <label> <input type="checkbox" /> Infinity </label>
+        <label> <input type="checkbox" /> Heart </label>
+      </div>
+      <div class="checkbox-column">
+        <label> <input type="checkbox" /> Cross </label>
+        <label> <input type="checkbox" /> Bead </label>
+        <label> <input type="checkbox" /> Open </label>
+        <label> <input type="checkbox" /> Five Stone </label>
+        <label> <input type="checkbox" /> Bypass </label>
+        <label> <input type="checkbox" /> Knot </label>
+      </div>
+    </div>
+    <div class="btn-container">
+      <select name="diamondtype" id="diamondtype">
+        <option value="Diamond Type" selected>Diamond Type</option>
+        <option value="blackdiamond">Black Diamond</option>
+        <option value="reddiamond">Red Diamond</option>
+      </select>
+    </div>
+    <div class="btn-container">
+      <select name="gemstone" id="gemstone">
+        <option value="Gemstone" selected>Gemstone</option>
+        <option value="volvo">Pink Stone</option>
+        <option value="saab">Red Stone</option>
+      </select>
+    </div>
+    <div class="btn-container">
+      <select name="metals" id="metals">
+        <option value="Metals" selected>Metals</option>
+        <option value="Platinum">Platinum</option>
+        <option value="Gold">Gold</option>
+        <option value="Silver">Silver</option>
+        <option value="Diamond">Diamond</option>
+      </select>
+    </div>
+    <div class="btn-container">
+      <select name="price" id="price" (change)="onSortChange($event)">
+        <option value="High to Low" selected>Price</option>
+        <option value="High to Low">High to Low</option>
+        <option value="Low to High">Low to High</option>
+      </select>
+    </div>
+    <div class="btn-container">
+      <select>
+        <option value="Plain Metal">Plain Metal</option>
+      </select>
+    </div>
+  </div>
+</div>
+<!-- <div class="other-sorting">hello</div> -->
+<div class="card-container">
+  <div class="item-container">
+    <div class="items">
+      <div class="item" *ngFor="let block of filteredBlocks">
+        <div class="card-navbar">
+          <div class="watch">
+            <img src="timer.png" />
+          </div>
+          <div class="heart">
+            <img src="heart.png" />
+          </div>
+        </div>
+        <!-- <img [src]="block.attr_whitegold_platinum_round_default_img" alt="Product Image"/> -->
+        <div class="ring-container">
+          <img [src]="block.randomImage" alt="Product Image" />
+        </div>
+        <div class="name-container">
+          <h3>{{ block.prod_name }}</h3>
+        </div>
+        <div class="name-des">
+          <p>{{ block.prod_long_desc }}</p>
+        </div>
+
+        <div class="bottom-bar">
+          <div class="price">
+            <h3 style="padding-top: 6px">$ {{ block.attr_14k_regular }}</h3>
+          </div>
+          <div class="review">
+            <h3>
+              <span
+                class="star"
+                [ngClass]="{ selected: block.rating >= 1 }"
+                (click)="rateProduct(block, 1)"
+              >
+                &#9733;
+              </span>
+              <span
+                class="star"
+                [ngClass]="{ selected: block.rating >= 2 }"
+                (click)="rateProduct(block, 2)"
+              >
+                &#9733;
+              </span>
+              <span
+                class="star"
+                [ngClass]="{ selected: block.rating >= 3 }"
+                (click)="rateProduct(block, 3)"
+              >
+                &#9733;
+              </span>
+              <span
+                class="star"
+                [ngClass]="{ selected: block.rating >= 4 }"
+                (click)="rateProduct(block, 4)"
+              >
+                &#9733;
+              </span>
+              <span
+                class="star"
+                [ngClass]="{ selected: block.rating >= 5 }"
+                (click)="rateProduct(block, 5)"
+              >
+                &#9733;
+              </span>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,233 @@
+.card-container {
+  height: auto;
+  // background-color: red;
+  //  background-image: url('/public/dark.jpg');
+  // background-color: #00dbde;
+  background-image: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .item-container {
+    // background-color: blue;
+    margin-top: 3%;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .items {
+      // background-color: white;
+
+      //  background-image: url('img/light.jpg');
+      height: auto;
+      width: 95%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      padding: 50px;
+      box-sizing: border-box;
+    }
+
+    .item {
+      // background-color: red;
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      height: 65vh;
+      width: 30%auto;
+      box-sizing: border-box;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transform-origin: center;
+    }
+
+    .item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.ring-container {
+  // background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.ring-container img {
+  width: 50%;
+  height: 50%;
+  margin-bottom: 10%;
+}
+
+.name-container {
+  // background-color: red;
+  height: 8vh;
+  font-size: 17px;
+  margin-bottom: 30px;
+
+  //     font-family: "Style Script", cursive;
+  //   font-weight: 400;
+  //   font-style: normal;
+}
+
+.name-des {
+  font-size: 15px;
+
+  font-family: "Style Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 10px;
+}
+
+.bottom-bar {
+  //   background-color: red;
+  height: 10vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.price {
+  // background-color: white;
+  padding-left: 10%;
+  height: 7vh;
+  width: 40%;
+  // padding-top:10px
+  margin-left: 10px;
+}
+.review {
+  // background-color: pink;
+
+  height: 7vh;
+  width: 45%;
+}
+
+.star {
+  font-size: 22px;
+  color: rgb(215, 202, 202);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding-left: 10px;
+}
+
+.star.selected {
+  color: red;
+}
+
+.sort-container {
+  height: 10vh;
+  width: 100%;
+  // background-color: black;
+}
+
+.gender-container {
+  margin-top: 30px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  // height: 10vh;
+  width: 100;
+  // gap:1px
+}
+.other-sorting {
+  // background-color: purple;
+
+  height: 10vh;
+  width: 100%;
+}
+.btn-container {
+  // background-color: pink;
+  height: 7vh;
+  width: 12%;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: bold;
+  margin-left: 4%;
+}
+
+.blue-btn {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: white;
+}
+
+.red-btn {
+  background-color: rgb(213, 25, 25);
+  color: white;
+}
+
+select {
+  // background-color: black;
+  border: 1px solid black;
+  border-radius: 20px;
+  height: 62%;
+  width: 100%;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.checkbox-container {
+  height: auto;
+  width: 35%;
+  display: flex;
+  background-color: white;
+  position: absolute; /* Allows it to overlay other content */
+  top: 0; /* Adjust to place it where needed */
+  left: 0; /* Adjust the horizontal position */
+  margin-top: 9.5%; /* Use margin to position it vertically relative to its container */
+  z-index: 10; /* Ensure it appears above other elements */
+  padding: 10px;
+  margin-left: 4%;
+  border-radius: 10px;
+}
+
+.checkbox-column {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8%;
+  margin-right: 60px;
+}
+
+.checkbox-column label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.checkbox-column input[type="checkbox"] {
+  margin-right: 5px;
+}
+.card-navbar {
+  // background-color: black;
+  height: 3vh;
+  display: flex;
+  justify-content: space-between;
+}
+.watch img {
+  width: 30px;
+  height: 30px;
+}
+.heart img {
+  width: 30px;
+  height: 30px;
+}
